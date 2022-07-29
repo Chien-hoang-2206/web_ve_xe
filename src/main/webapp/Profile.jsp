@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -82,17 +81,10 @@
 		<section class="col-md-10">
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
-					<span class="input-group-text" id="basic-addon1">Username</span>
-				</div>
-				<input type="text" class="form-control" placeholder="th4nhlam"
-					aria-label="Username" aria-describedby="basic-addon1" disabled>
-			</div>
-			<div class="input-group mb-3">
-				<div class="input-group-prepend">
 					<span class="input-group-text" id="basic-addon1">Họ và tên</span>
 				</div>
 				<input type="text" class="form-control"
-					placeholder="Phạm Trần Thanh Lâm" aria-label="Username"
+					placeholder="${sessionScope.acc.userName }" aria-label="Username"
 					aria-describedby="basic-addon1" disabled>
 			</div>
 
@@ -101,14 +93,14 @@
 					<span class="input-group-text" id="basic-addon1">Email</span>
 				</div>
 				<input type="text" class="form-control"
-					placeholder="lam73nk@gmail.com" aria-label="Username"
+					placeholder="${sessionScope.acc.userEmail }" aria-label="Username"
 					aria-describedby="basic-addon1" disabled>
 			</div>
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
 					<span class="input-group-text" id="basic-addon1">SĐT: </span>
 				</div>
-				<input type="text" class="form-control" placeholder="012345678"
+				<input type="text" class="form-control" placeholder="${sessionScope.acc.userPhone }"
 					aria-label="Username" aria-describedby="basic-addon1" disabled>
 			</div>
 			<div class="input-group mb-3">
@@ -116,7 +108,7 @@
 					<span class="input-group-text" id="basic-addon1">Giới tính:
 					</span>
 				</div>
-				<input type="text" class="form-control" placeholder="012345678"
+				<input type="text" class="form-control" placeholder="Nam"
 					aria-label="Username" aria-describedby="basic-addon1" disabled>
 			</div>
 			<button class="btn btn-primary" type="button"
@@ -124,13 +116,6 @@
 				aria-expanded="false" aria-controls="collapseExample">Thay
 				đổi thông tin cá nhân</button>
 			<div class="collapse" id="changeinfo">
-				<div class="input-group mb-3">
-					<div class="input-group-prepend">
-						<span class="input-group-text" id="basic-addon1">Username</span>
-					</div>
-					<input type="text" class="form-control" placeholder="tranhoang"
-						aria-label="Username" aria-describedby="basic-addon1" disabled>
-				</div>
 				<div class="input-group mb-3">
 					<div class="input-group-prepend">
 						<span class="input-group-text" id="basic-addon1">Họ và tên</span>
@@ -160,7 +145,7 @@
 						<span class="input-group-text" id="basic-addon1">Giới tính:
 						</span>
 					</div>
-					<input type="text" class="form-control" placeholder="012345678"
+					<input type="text" class="form-control" placeholder="Nam"
 						aria-label="Username" aria-describedby="basic-addon1">
 
 				</div>
