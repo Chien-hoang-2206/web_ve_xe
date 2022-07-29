@@ -28,7 +28,7 @@ public class LogoutControl extends HttpServlet {
     	request.setCharacterEncoding("utf-8");
         HttpSession session = request.getSession();
         session.removeAttribute("acc");
-        response.sendRedirect("login");
+        response.sendRedirect("ThanksForSignUp.jsp");
      }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

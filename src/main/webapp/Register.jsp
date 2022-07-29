@@ -96,7 +96,7 @@
 
                     <div class="d-flex align-items-center">
 
-                      <button type="submit" class="btn btn-primary ms-auto">
+                      <button type="submit" class="btn btn-primary ms-auto" >
                         Đăng ký
                       </button>
                     </div>

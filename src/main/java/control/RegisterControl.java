@@ -43,7 +43,7 @@ public class RegisterControl extends HttpServlet {
                Account a = dao.checkAcccountExist(email);
                if(a==null) {
             	   dao.signup(username, phone, email, password, sex);
-            	   response.sendRedirect("Login.jsp");
+            	   response.sendRedirect("ThanksForSignUp.jsp");
                }else {
             	    request.setAttribute("mess","Email đã được đăng kí tài khoản.");
                		request.getRequestDispatcher("Register.jsp").forward(request, response);
