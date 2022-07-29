@@ -128,7 +128,7 @@
 					<div class="input-group-prepend">
 						<span class="input-group-text" id="basic-addon1">Username</span>
 					</div>
-					<input type="text" class="form-control" placeholder="th4nhlam"
+					<input type="text" class="form-control" placeholder="tranhoang"
 						aria-label="Username" aria-describedby="basic-addon1" disabled>
 				</div>
 				<div class="input-group mb-3">
