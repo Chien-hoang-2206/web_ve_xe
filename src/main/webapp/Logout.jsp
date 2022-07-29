@@ -28,22 +28,31 @@
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="Home.jsp">Trang chủ</a></li>
-				<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="FindTicket.jsp">Tra cứu vé xe</a></li>
- 				<li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Tài khoản
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="Register.jsp">Đăng ký</a></li>
-                  <li><a class="dropdown-item" href="Login.jsp">Đăng nhập</a></li>
-                  
-                </ul>
-               
-              </li>
-				
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="home">Trang chủ</a></li>
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="findticket">Tra cứu vé xe</a></li>
+					<c:if test="${sessionScope.acc  == null}">
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+							role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Tài khoản </a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" href="Register.jsp">Đăng
+										ký</a></li>
+								<li><a class="dropdown-item" href="Login.jsp">Đăng nhập</a></li>
+							</ul></li>
+					</c:if>
+					<c:if test="${sessionScope.acc  != null}">
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" href="#">Xin chào
+								${sessionScope.acc.userName}</a></li>
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" href="logout">Đăng xuất</a></li>
+					</c:if>
+				</ul>
+				</li>
+
 
 				</ul>
 				<button class="nav-link active" aria-current="page" href="#">
@@ -59,10 +68,8 @@
 			</div>
 		</div>
 	</nav>
-	<% 
+	<%
 	session.invalidate();
 	%>
-	<H1>
-		Bạn đã đăng xuất
-	</H1>
+	<H1>Bạn đã đăng xuất</H1>
 </html>

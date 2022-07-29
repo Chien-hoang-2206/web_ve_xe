@@ -29,7 +29,7 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="Home.jsp">Trang chủ</a></li>
+						aria-current="page" href="home">Trang chủ</a></li>
 				<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="FindTicket.jsp">Tra cứu vé xe</a></li>
 				<c:if test="${sessionScope.acc  == null}">	
@@ -46,7 +46,7 @@
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="#">Xin chào ${sessionScope.acc.userName}</a></li>
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="Logout.jsp">Đăng xuất</a></li>
+						aria-current="page" href="logout">Đăng xuất</a></li>
 				</c:if>
 				</ul>
 				<button class="nav-link active" aria-current="page" href="#">
