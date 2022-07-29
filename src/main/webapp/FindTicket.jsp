@@ -42,8 +42,8 @@
 							role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								Xin chào ${sessionScope.acc.userName} </a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="Register.jsp">Trang cá nhân</a></li>
-								<li><a class="dropdown-item" href="Login.jsp">Vé của tôi</a></li>
+								<li><a class="dropdown-item" href="Profile.jsp">Trang cá nhân</a></li>
+								<li><a class="dropdown-item" href="Ticketinfo.jsp">Vé của tôi</a></li>
 								<li><a class="dropdown-item" href="logout">Đăng xuất</a></li>
 								</ul></li>
 					</c:if>
