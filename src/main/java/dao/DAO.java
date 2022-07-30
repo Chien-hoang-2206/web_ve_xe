@@ -15,6 +15,7 @@ import context.DBContext;
 import entity.Account;
 import entity.Category;
 import entity.Product;
+import entity.trip;
 
 /**
  *
@@ -27,25 +28,34 @@ public class DAO {
     ResultSet rs = null;
 
 
-    public List<Product> getAllProduct() {
-    	List<Product> list = new ArrayList<>();
-    	String query = "SELECT * FROM wish.product;";
-    	try {
-    		conn = new DBContext().getConnection();//mo ket noi voi sql
-    		ps = conn.prepareStatement(query);
-    		rs = ps.executeQuery();
-    		while (rs.next()) {
-    			list.add(new Product(rs.getInt(1),
-    					rs.getString(2),
-    					rs.getString(3),
-    					rs.getInt(4),
-    					rs.getString(5),
-    					rs.getString(6)));
-    		}
-    	} catch (Exception e) {
-    	}
-    	return list;
-    }
+    public List<trip> getAllTrip(){
+		List<trip> list = new ArrayList<>();
+		String query ="SELECT tripID,carName, carNumberSlot, carPrice, routeFrom, routeTo, timeFrom, timeTo\r\n"
+				+ "FROM vexe.trips\r\n"
+				+ "INNER JOIN cars ON trips.carID = cars.carID\r\n"
+				+ "INNER JOIN times ON trips.timeID = times.timeID\r\n"
+				+ "INNER JOIN routes ON trips.routeID = routes.routeID\r\n"
+				+ "where routeFrom = 'Đà Nẵng' and routeTo = 'Sài Gòn' and timeFrom like '2022-08-10%' ";
+		try {
+			conn= new DBContext().getConnection();
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				list.add(new trip(rs.getInt(1),
+							rs.getString(2),
+							rs.getInt(3),
+							rs.getInt(4),
+							rs.getString(5),
+							rs.getString(6),
+							rs.getString(7),
+							rs.getString(8)));
+			}
+			
+		}catch(Exception e) {
+			
+		}
+		return list;
+	}
     public List<Product> getProductByCategory(String cid) {
     	List<Product> list = new ArrayList<>();
     	String query = "SELECT * FROM wish.product \n" + " where cateID = ?";
