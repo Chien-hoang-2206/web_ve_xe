@@ -13,6 +13,12 @@ public class Account {
 	public void setId(int id) {
 		this.id = id;
 	}
+	public Account(String userName, String userPhone, String userEmail) {
+		super();
+		this.userName = userName;
+		this.userPhone = userPhone;
+		this.userEmail = userEmail;
+	}
 	public Account(int id, String userName, String userPhone, String userEmail, String userPass, int userSex) {
 		super();
 		this.id = id;

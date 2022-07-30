@@ -6,19 +6,25 @@ public class ticket {
 	int carID;
 	int paymentID;
 	int timeID;
-	boolean ticketStatus;
+	boolean ticketStatus = false;
 	public ticket() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public ticket(int ticketID, int userID, int carID, int paymentID, int timeID, int slotID, boolean ticketStatus) {
+	public ticket(int userID, int carID, int paymentID, int timeID) {
+		super();
+		this.userID = userID;
+		this.carID = carID;
+		this.paymentID = paymentID;
+		this.timeID = timeID;
+	}
+	public ticket(int ticketID, int userID, int carID, int paymentID, int timeID ) {
 		super();
 		this.ticketID = ticketID;
 		this.userID = userID;
 		this.carID = carID;
 		this.paymentID = paymentID;
 		this.timeID = timeID;
-		this.ticketStatus = ticketStatus;
 	}
 	public int getTicketID() {
 		return ticketID;

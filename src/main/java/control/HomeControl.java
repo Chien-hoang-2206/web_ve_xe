@@ -43,19 +43,19 @@ public class HomeControl extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         //b1: get data from dao
         DAO dao = new DAO();
-        List<Product> list = dao.getAllProduct();
-        List<Category> listC = dao.getAllCategory();
-        Product last = dao.getLast();
-        
-        //b2: set data to jsp
-        
-
-        request.setAttribute("listP", list);
-        request.setAttribute("listCC", listC);
-        request.setAttribute("p", last);
-        request.getRequestDispatcher("Home.jsp").forward(request, response);
-        //404 -> url
-        //500 -> jsp properties
+////        List<Product> list = dao.getAllProduct();
+//        List<Category> listC = dao.getAllCategory();
+//        Product last = dao.getLast();
+//        
+//        //b2: set data to jsp
+//        
+//
+//        request.setAttribute("listP", list);
+//        request.setAttribute("listCC", listC);
+//        request.setAttribute("p", last);
+//        request.getRequestDispatcher("Home.jsp").forward(request, response);
+//        //404 -> url
+//        //500 -> jsp properties
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

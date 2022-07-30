@@ -35,9 +35,9 @@ public class AddToCartController extends HttpServlet {
     		DAO dao = new DAO();
     		cart.setTrips( dao.getAllTrip());
     		trip p = cart.getTripById(1);
-    		System.out.println(p);   			
-    	
-    	
+    		session.setAttribute("trip", p );
+    		request.setAttribute("tripdetail", p);
+    		request.getRequestDispatcher("AddToCart.jsp").forward(request, response);
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
