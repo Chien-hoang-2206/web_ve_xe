@@ -12,7 +12,7 @@ public class DBContext {
     /*DO NOT EDIT THE BELOW METHOD, YOU MUST USE ONLY THIS ONE FOR YOUR DATABASE CONNECTION*/
      public Connection getConnection()throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        return  DriverManager.getConnection("jdbc:mysql://localhost:3306/vexe", "root", "bestwish123");
+        return  DriverManager.getConnection("jdbc:mysql://localhost:3306/vexe", "root", "22062001");
      }  
 }
  

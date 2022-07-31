@@ -30,30 +30,16 @@
 						aria-current="page" href="Home.jsp">Trang chủ</a></li>
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="FindTicket.jsp">Tra cứu vé xe</a></li>
-					<c:if test="${sessionScope.acc  == null}">
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-							role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								Tài khoản </a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="Register.jsp">Đăng
-										ký</a></li>
-								<li><a class="dropdown-item" href="Login.jsp">Đăng nhập</a></li>
-							</ul></li>
-					</c:if>
-					<c:if test="${sessionScope.acc  != null}">
+
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 							role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								Xin chào ${sessionScope.acc.userName} </a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="Profile.jsp">Trang
-										cá nhân</a></li>
-								<li><a class="dropdown-item" href="Ticketinfo.jsp">Vé
-										của tôi</a></li>
+								<li><a class="dropdown-item" href="Profile.jsp">Trang cá nhân</a></li>
+								<li><a class="dropdown-item" href="Ticketinfo.jsp">Vé của tôi</a></li>
 								<li><a class="dropdown-item" href="logout">Đăng xuất</a></li>
-							</ul></li>
-					</c:if>
+								</ul></li>
 					<button class="nav-link active" aria-current="page" href="#">
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 							fill="currentColor" class="bi bi-telephone-fill"
@@ -71,10 +57,9 @@
 			<!-- Bên info  -->
 			<div id="list">
 				<ul class="nav flex-column" style="background-color: #e1e1e1;">
-					<li class="nav-item"><a href="index.html"
-						class="nav-link active"><i class="fa fa-adjust"></i>Thông tin
-							tài khoản</a></li>
-					<li class="nav-item"><a href="ticketinfo.html"
+					<li class="nav-item"><a href="Profile.jsp"
+						class="nav-link active"><i class="fa fa-adjust"></i>Thông tin tài khoản</a></li>
+					<li class="nav-item"><a href="Ticketinfo.jsp"
 						class="nav-link active"><i class="fa fa-adjust"></i>Vé đã đặt</a></li>
 		</section>
 
@@ -100,8 +85,9 @@
 				<div class="input-group-prepend">
 					<span class="input-group-text" id="basic-addon1">SĐT: </span>
 				</div>
-				<input type="text" class="form-control" placeholder="${sessionScope.acc.userPhone }"
-					aria-label="Username" aria-describedby="basic-addon1" disabled>
+				<input type="text" class="form-control"
+					placeholder="${sessionScope.acc.userPhone }" aria-label="Username"
+					aria-describedby="basic-addon1" disabled>
 			</div>
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
@@ -113,8 +99,7 @@
 			</div>
 			<button class="btn btn-primary" type="button"
 				data-bs-toggle="collapse" data-bs-target="#changeinfo"
-				aria-expanded="false" aria-controls="collapseExample">Thay
-				đổi thông tin cá nhân</button>
+				aria-expanded="false" aria-controls="collapseExample">Thay đổi thông tin cá nhân</button>
 			<div class="collapse" id="changeinfo">
 				<div class="input-group mb-3">
 					<div class="input-group-prepend">
