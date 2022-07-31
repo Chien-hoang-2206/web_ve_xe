@@ -31,24 +31,27 @@
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="FindTicket.jsp">Tra cứu vé xe</a></li>
 
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-							role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								Xin chào ${sessionScope.acc.userName} </a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="Profile.jsp">Trang cá nhân</a></li>
-								<li><a class="dropdown-item" href="Ticketinfo.jsp">Vé của tôi</a></li>
-								<li><a class="dropdown-item" href="logout">Đăng xuất</a></li>
-								</ul></li>
-					<button class="nav-link active" aria-current="page" href="#">
-						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-							fill="currentColor" class="bi bi-telephone-fill"
-							viewBox="0 0 16 16">
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+						role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							Xin chào ${sessionScope.acc.userName} </a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item" href="Profile.jsp">Trang cá
+									nhân</a></li>
+							<li><a class="dropdown-item" href="Ticketinfo.jsp">Vé
+									của tôi</a></li>
+							<li><a class="dropdown-item" href="logout">Đăng xuất</a></li>
+						</ul></li>
+				</ul>
+				<button class="nav-link active" aria-current="page" href="#">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+						fill="currentColor" class="bi bi-telephone-fill"
+						viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
-								d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+							d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
               </svg>
-						Hotline
-					</button>
+					Hotline
+				</button>
 			</div>
 		</div>
 	</nav>
@@ -58,7 +61,8 @@
 			<div id="list">
 				<ul class="nav flex-column" style="background-color: #e1e1e1;">
 					<li class="nav-item"><a href="Profile.jsp"
-						class="nav-link active"><i class="fa fa-adjust"></i>Thông tin tài khoản</a></li>
+						class="nav-link active"><i class="fa fa-adjust"></i>Thông tin
+							tài khoản</a></li>
 					<li class="nav-item"><a href="Ticketinfo.jsp"
 						class="nav-link active"><i class="fa fa-adjust"></i>Vé đã đặt</a></li>
 		</section>
@@ -99,7 +103,8 @@
 			</div>
 			<button class="btn btn-primary" type="button"
 				data-bs-toggle="collapse" data-bs-target="#changeinfo"
-				aria-expanded="false" aria-controls="collapseExample">Thay đổi thông tin cá nhân</button>
+				aria-expanded="false" aria-controls="collapseExample">Thay
+				đổi thông tin cá nhân</button>
 			<div class="collapse" id="changeinfo">
 				<div class="input-group mb-3">
 					<div class="input-group-prepend">

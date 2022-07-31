@@ -75,23 +75,30 @@
 
 					<div class="col-md-4 col-md-pull-7">
 						<div class="booking-form">
+					 <div class="mb-3">
+                      <label class="mb-2 text-muted" for="email">E-Mail</label>
+                      <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
+                      <div class="invalid-feedback">
+                        Email không hợp lệ
+                      </div>
+                    </div>
 							<form>
 								<div class="form-group">
-									<span class="form-label">Điểm xuất phát</span> <input
-										class="form-control" type="text"
+									<span class="form-label">Điểm xuất phát</span>
+									 <input	class="form-control" type="text" name="routeFrom"
 										placeholder="Nhập điểm xuất phát" id="departure">
 								</div>
 
 								<div class="form-group">
 									<span class="form-label">Điểm đến</span> <input
-										class="form-control" type="text" placeholder="Nhập điểm đến"
+										class="form-control" type="text"  name="routeTo" placeholder="Nhập điểm đến"
 										id="destination">
 								</div>
 								<div class="row">
 									<div class="col-sm">
 										<div class="form-group">
 											<span class="form-label">Ngày đi</span> <input
-												class="form-control" type="date" id="date" required value=""
+												class="form-control" type="date" name="dateFrom " id="date" required value=""
 												min="1997-01-01" max="2030-12-31">
 										</div>
 									</div>
@@ -122,8 +129,7 @@
 											console.log(formatdate(date));
 										}
 									</script>
-									<a href="../Hienchuyenxe/index.html" class="submit-btn">Tìm
-										vé <svg xmlns="http://www.w3.org/2000/svg" width="16"
+									<a href="ShowTrip" class="submit-btn">Tìm vé <svg xmlns="http://www.w3.org/2000/svg" width="16"
 											height="16" fill="currentColor" class="bi bi-search"
 											viewBox="0 0 16 16">
                                             <path
