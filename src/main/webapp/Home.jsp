@@ -28,26 +28,32 @@
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				<li class="nav-item"><a class="nav-link active"
+					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="home">Trang chủ</a></li>
-				<li class="nav-item"><a class="nav-link active"
+					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="FindTicket.jsp">Tra cứu vé xe</a></li>
-				<c:if test="${sessionScope.acc  == null}">	
-				<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-						role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							Tài khoản </a>
-						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="Register.jsp">Đăng ký</a></li>
+					<c:if test="${sessionScope.acc  == null}">
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+							role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Tài khoản </a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" href="Register.jsp">Đăng
+										ký</a></li>
 								<li><a class="dropdown-item" href="Login.jsp">Đăng nhập</a></li>
-				</ul></li>
-				</c:if>
-			   <c:if test="${sessionScope.acc  != null}">	
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="#">Xin chào ${sessionScope.acc.userName}</a></li>
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="logout">Đăng xuất</a></li>
-				</c:if>
+							</ul></li>
+					</c:if>
+					<c:if test="${sessionScope.acc  != null}">
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+							role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Xin chào ${sessionScope.acc.userName} </a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" href="Profile.jsp">Trang cá nhân</a></li>
+								<li><a class="dropdown-item" href="Ticketinfo.jsp">Vé của tôi</a></li>
+								<li><a class="dropdown-item" href="logout">Đăng xuất</a></li>
+								</ul></li>
+					</c:if>
 				</ul>
 				<button class="nav-link active" aria-current="page" href="#">
 					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -69,23 +75,30 @@
 
 					<div class="col-md-4 col-md-pull-7">
 						<div class="booking-form">
+					 <div class="mb-3">
+                      <label class="mb-2 text-muted" for="email">E-Mail</label>
+                      <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
+                      <div class="invalid-feedback">
+                        Email không hợp lệ
+                      </div>
+                    </div>
 							<form>
 								<div class="form-group">
-									<span class="form-label">Điểm xuất phát</span> <input
-										class="form-control" type="text"
+									<span class="form-label">Điểm xuất phát</span>
+									 <input	class="form-control" type="text" name="routeFrom"
 										placeholder="Nhập điểm xuất phát" id="departure">
 								</div>
 
 								<div class="form-group">
 									<span class="form-label">Điểm đến</span> <input
-										class="form-control" type="text" placeholder="Nhập điểm đến"
+										class="form-control" type="text"  name="routeTo" placeholder="Nhập điểm đến"
 										id="destination">
 								</div>
 								<div class="row">
 									<div class="col-sm">
 										<div class="form-group">
 											<span class="form-label">Ngày đi</span> <input
-												class="form-control" type="date" id="date" required value=""
+												class="form-control" type="date" name="dateFrom " id="date" required value=""
 												min="1997-01-01" max="2030-12-31">
 										</div>
 									</div>
@@ -116,8 +129,7 @@
 											console.log(formatdate(date));
 										}
 									</script>
-									<a href="../Hienchuyenxe/index.html" class="submit-btn">Tìm
-										vé <svg xmlns="http://www.w3.org/2000/svg" width="16"
+									<a href="ShowTrip" class="submit-btn">Tìm vé <svg xmlns="http://www.w3.org/2000/svg" width="16"
 											height="16" fill="currentColor" class="bi bi-search"
 											viewBox="0 0 16 16">
                                             <path

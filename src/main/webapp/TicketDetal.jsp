@@ -43,14 +43,18 @@
 							</ul></li>
 					</c:if>
 					<c:if test="${sessionScope.acc  != null}">
-						<li class="nav-item"><a class="nav-link active"
-							aria-current="page" href="#">Xin chào
-								${sessionScope.acc.userName}</a></li>
-						<li class="nav-item"><a class="nav-link active"
-							aria-current="page" href="logout">Đăng xuất</a></li>
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+							role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Xin chào ${sessionScope.acc.userName} </a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" href="Profile.jsp">Trang cá nhân</a></li>
+								<li><a class="dropdown-item" href="Ticketinfo.jsp">Vé của tôi</a></li>
+								<li><a class="dropdown-item" href="logout">Đăng xuất</a></li>
+								</ul></li>
 					</c:if>
 				</ul>
-				s
+			
 				<button class="nav-link active" aria-current="page" href="#">
 					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 						fill="currentColor" class="bi bi-telephone-fill"
