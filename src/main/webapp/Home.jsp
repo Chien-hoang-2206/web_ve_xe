@@ -1,290 +1,578 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+
+<html>
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Web đặt vé xe</title>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-	rel="stylesheet">
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Alegreya:700"
-	rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400"
+<title>Traveler &mdash; Free Website Template, Free HTML5
+	Template by FreeHTML5.co</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description"
+	content="Free HTML5 Website Template by FreeHTML5.co" />
+<meta name="keywords"
+	content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+<meta name="author" content="FreeHTML5.co" />
+
+<!-- Facebook and Twitter integration -->
+<meta property="og:title" content="Meomeo" />
+<meta property="og:image" content="" />
+<meta property="og:url" content="" />
+<meta property="og:site_name" content="" />
+<meta property="og:description" content="" />
+<meta name="twitter:title" content="" />
+<meta name="twitter:image" content="" />
+<meta name="twitter:url" content="" />
+<meta name="twitter:card" content="" />
+
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
 	rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
-	rel="stylesheet">
+<!-- Animate.css -->
+<link rel="stylesheet" href="css/animate.css">
+<!-- Icomoon Icon Fonts-->
+<link rel="stylesheet" href="css/icomoon.css">
+<!-- Themify Icons-->
+<link rel="stylesheet" href="css/themify-icons.css">
+<!-- Bootstrap  -->
+<link rel="stylesheet" href="css/bootstrap.css">
+
+<!-- Magnific Popup -->
+<link rel="stylesheet" href="css/magnific-popup.css">
+
+<!-- Magnific Popup -->
+<link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+
+<!-- Owl Carousel  -->
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+<!-- Theme style  -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Modernizr JS -->
+<script src="js/modernizr-2.6.2.min.js"></script>
+<!-- FOR IE9 below -->
+<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<div class="container-fluid">
 
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="home">Trang chủ</a></li>
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="FindTicket.jsp">Tra cứu vé xe</a></li>
-					<c:if test="${sessionScope.acc  == null}">
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-							role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								Tài khoản </a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="Register.jsp">Đăng
-										ký</a></li>
-								<li><a class="dropdown-item" href="Login.jsp">Đăng nhập</a></li>
-							</ul></li>
-					</c:if>
-					<c:if test="${sessionScope.acc  != null}">
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-							role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								Xin chào ${sessionScope.acc.userName} </a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="Profile.jsp">Trang cá nhân</a></li>
-								<li><a class="dropdown-item" href="Ticketinfo.jsp">Vé của tôi</a></li>
-								<li><a class="dropdown-item" href="logout">Đăng xuất</a></li>
+	<div class="gtco-loader"></div>
+
+	<div id="page">
+
+
+		<!-- <div class="page-inner"> -->
+		<nav class="gtco-nav" role="navigation">
+			<div class="gtco-container">
+
+				<div class="row">
+					<div class="col-sm-4 col-xs-12">
+						<div id="gtco-logo">
+							<a href="home">VeXe.Com<em></em></a>
+						</div>
+					</div>
+					<div class="col-xs-8 text-right menu-1">
+						<ul>
+							<li><a href="destination.html">Địa điểm</a></li>
+							
+							<li class="has-dropdown"><a href="#">Travel</a>
+								<ul class="dropdown">
+									<li><a href="#">Europe</a></li>
+									<li><a href="#">Asia</a></li>
+									<li><a href="#">America</a></li>
+									<li><a href="#">Canada</a></li>
 								</ul></li>
-					</c:if>
-				</ul>
-				<button class="nav-link active" aria-current="page" href="#">
-					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-						fill="currentColor" class="bi bi-telephone-fill"
-						viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-							d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
-              </svg>
-					Hotline
-				</button>
+							<li><a href="FindTicket.jsp">Tra cứu vé xe</a></li>
+							
+							<c:if test="${sessionScope.acc == null}">
+							<li class="has-dropdown"><a href="#">Tài khoản</a>
+								<ul class="dropdown">
+									<li><a href="Register.jsp">Đăng ký</a></li>
+									<li><a href="Login.jsp">Đăng nhập</a></li>
+								</ul></li>
+							</c:if>
+						
+							<c:if test="${sessionScope.acc != null}">
+							<li class="has-dropdown"><a href="#">Xin chào  ${sessionScope.acc.userName} </a>
+								<ul class="dropdown">
+									<li><a href="Profile.jsp">Thông tin cá nhân </a></li>
+									<li><a href="myticket">Vé của tôi</a></li>
+									<li><a href="logout">Đăng xuất</a></li>
+								</ul></li>
+							</c:if>
+
+							<li><a href="Contact.jsp">Contact</a></li>
+						</ul>
+					</div>
+				</div>
 
 			</div>
-		</div>
-	</nav>
-	<div id="booking" class="section">
-		<div class="section-center">
-			<div class="container">
+		</nav>
+
+		<header id="gtco-header" class="gtco-cover gtco-cover-md"
+			role="banner" style="background-image: url(images/img_6.jpg)">
+			<div class="overlay"></div>
+			<div class="gtco-container">
 				<div class="row">
+					<div class="col-md-12 col-md-offset-0 text-left">
 
-					<div class="col-md-4 col-md-pull-7">
-						<div class="booking-form">
-					 <div class="mb-3">
-                      <label class="mb-2 text-muted" for="email">E-Mail</label>
-                      <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
-                      <div class="invalid-feedback">
-                        Email không hợp lệ
-                      </div>
-                    </div>
-							<form>
-								<div class="form-group">
-									<span class="form-label">Điểm xuất phát</span>
-									 <input	class="form-control" type="text" name="routeFrom"
-										placeholder="Nhập điểm xuất phát" id="departure">
-								</div>
 
-								<div class="form-group">
-									<span class="form-label">Điểm đến</span> <input
-										class="form-control" type="text"  name="routeTo" placeholder="Nhập điểm đến"
-										id="destination">
-								</div>
-								<div class="row">
-									<div class="col-sm">
-										<div class="form-group">
-											<span class="form-label">Ngày đi</span> <input
-												class="form-control" type="date" name="dateFrom " id="date" required value=""
-												min="1997-01-01" max="2030-12-31">
+						<div class="row row-mt-15em">
+							<div class="col-md-7 mt-text animate-box"
+								data-animate-effect="fadeInUp">
+								<h1>Planing Trip To Anywhere in The World?</h1>
+							</div>
+							<div class="col-md-4 col-md-push-1 animate-box"
+								data-animate-effect="fadeInRight">
+								<div class="form-wrap">
+									<div class="tab">
+
+										<div class="tab-content">
+											<div class="tab-content-inner active" data-content="signup">
+												<h3>Tìm chuyến xe</h3>
+												<form action="searchTrip" method='get'>
+													<div class="row form-group">
+														<div class="col-md-12">
+															<label for="routeFrom">Điểm khởi hành</label> <select
+																name="routeFrom" id="routeFrom" class="form-control">
+																<option value="Đà Nẵng">Đà Nẵng</option>
+																<option value="Hiking">Hiking</option>
+																<option value="routeFrom">Caving</option>
+																<option value="routeFrom">Swimming</option>
+															</select>
+														</div>
+													</div>
+													<div class="row form-group">
+														<div class="col-md-12">
+															<label for="routeTo">Điểm đến</label> <select
+																name="routeTo" id="routeTo" class="form-control">
+																<option value="Sài Gòn">Sài Gòn</option>
+																<option value="USA">USA</option>
+																<option value="routeTo">Australia</option>
+																<option value="routeTo">Singapore</option>
+															</select>
+														</div>
+													</div>
+													<div>
+														<label for="timeFrom">Ngày đi:</label> <input type="date"
+															class="form-control" id="timeFrom" name="timeFrom">
+													</div>
+
+													<div class="row form-group">
+														<div class="col-md-12">
+															<input type="submit" class="btn btn-primary btn-block"
+																value="Submit">
+														</div>
+													</div>
+												</form>
+											</div>
+
 										</div>
 									</div>
-
 								</div>
-								<div class="form-btn">
-									<script>
-										function formatdate(date) {
-											let m = date.getMonth() + 1;
-											let d = date.getDate();
-											let y = date.getFullYear();
-											if (m >= 10) {
-												return d + '-' + m + '-' + y;
-											} else {
-												return d + '-0' + m + '-' + y;
-											}
-										}
-										function myfunction() {
-											var departure = document
-													.getElementById("departure").value;
-											var destination = document
-													.getElementById("destination").value;
-											var input = document
-													.getElementById("date").value;
-											var date = new Date(input);
-											console.log(departure);
-											console.log(destination);
-											console.log(formatdate(date));
-										}
-									</script>
-									<a href="ShowTrip" class="submit-btn">Tìm vé <svg xmlns="http://www.w3.org/2000/svg" width="16"
-											height="16" fill="currentColor" class="bi bi-search"
-											viewBox="0 0 16 16">
-                                            <path
-												d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                                          </svg>
-									</a>
-								</div>
-							</form>
+							</div>
 						</div>
+
+
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="gtco-section">
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+						<h2>Most Popular Destination</h2>
+						<p>Dignissimos asperiores vitae velit veniam totam fuga
+							molestias accusamus alias autem provident. Odit ab aliquam dolor
+							eius.</p>
+					</div>
+				</div>
+				<div class="row">
+
+					<div class="col-lg-4 col-md-4 col-sm-6">
+						<a href="images/img_1.jpg" class="fh5co-card-item image-popup">
+							<figure>
+								<div class="overlay">
+									<i class="ti-plus"></i>
+								</div>
+								<img src="images/img_1.jpg" alt="Image" class="img-responsive">
+							</figure>
+							<div class="fh5co-text">
+								<h2>New York, USA</h2>
+								<p>Far far away, behind the word mountains, far from the
+									countries Vokalia..</p>
+								<p>
+									<span class="btn btn-primary">Schedule a Trip</span>
+								</p>
+							</div>
+						</a>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-6">
+						<a href="images/img_2.jpg" class="fh5co-card-item image-popup">
+							<figure>
+								<div class="overlay">
+									<i class="ti-plus"></i>
+								</div>
+								<img src="images/img_2.jpg" alt="Image" class="img-responsive">
+							</figure>
+							<div class="fh5co-text">
+								<h2>Seoul, South Korea</h2>
+								<p>Far far away, behind the word mountains, far from the
+									countries Vokalia..</p>
+								<p>
+									<span class="btn btn-primary">Schedule a Trip</span>
+								</p>
+							</div>
+						</a>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-6">
+						<a href="images/img_3.jpg" class="fh5co-card-item image-popup">
+							<figure>
+								<div class="overlay">
+									<i class="ti-plus"></i>
+								</div>
+								<img src="images/img_3.jpg" alt="Image" class="img-responsive">
+							</figure>
+							<div class="fh5co-text">
+								<h2>Paris, France</h2>
+								<p>Far far away, behind the word mountains, far from the
+									countries Vokalia..</p>
+								<p>
+									<span class="btn btn-primary">Schedule a Trip</span>
+								</p>
+							</div>
+						</a>
+					</div>
+
+
+					<div class="col-lg-4 col-md-4 col-sm-6">
+						<a href="images/img_4.jpg" class="fh5co-card-item image-popup">
+							<figure>
+								<div class="overlay">
+									<i class="ti-plus"></i>
+								</div>
+								<img src="images/img_4.jpg" alt="Image" class="img-responsive">
+							</figure>
+							<div class="fh5co-text">
+								<h2>Sydney, Australia</h2>
+								<p>Far far away, behind the word mountains, far from the
+									countries Vokalia..</p>
+								<p>
+									<span class="btn btn-primary">Schedule a Trip</span>
+								</p>
+							</div>
+						</a>
+					</div>
+
+					<div class="col-lg-4 col-md-4 col-sm-6">
+						<a href="images/img_5.jpg" class="fh5co-card-item image-popup">
+							<figure>
+								<div class="overlay">
+									<i class="ti-plus"></i>
+								</div>
+								<img src="images/img_5.jpg" alt="Image" class="img-responsive">
+							</figure>
+							<div class="fh5co-text">
+								<h2>Greece, Europe</h2>
+								<p>Far far away, behind the word mountains, far from the
+									countries Vokalia..</p>
+								<p>
+									<span class="btn btn-primary">Schedule a Trip</span>
+								</p>
+							</div>
+						</a>
+					</div>
+
+					<div class="col-lg-4 col-md-4 col-sm-6">
+						<a href="images/img_6.jpg" class="fh5co-card-item image-popup">
+							<figure>
+								<div class="overlay">
+									<i class="ti-plus"></i>
+								</div>
+								<img src="images/img_6.jpg" alt="Image" class="img-responsive">
+							</figure>
+							<div class="fh5co-text">
+								<h2>Spain, Europe</h2>
+								<p>Far far away, behind the word mountains, far from the
+									countries Vokalia..</p>
+								<p>
+									<span class="btn btn-primary">Schedule a Trip</span>
+								</p>
+							</div>
+						</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="gtco-features">
+			<div class="gtco-container">
+				<div class="row">
+					<div
+						class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
+						<h2>How It Works</h2>
+						<p>Dignissimos asperiores vitae velit veniam totam fuga
+							molestias accusamus alias autem provident. Odit ab aliquam dolor
+							eius.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-sm-6">
+						<div class="feature-center animate-box"
+							data-animate-effect="fadeIn">
+							<span class="icon"> <i>1</i>
+							</span>
+							<h3>Lorem ipsum dolor sit amet</h3>
+							<p>Dignissimos asperiores vitae velit veniam totam fuga
+								molestias accusamus alias autem provident. Odit ab aliquam dolor
+								eius.</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="feature-center animate-box"
+							data-animate-effect="fadeIn">
+							<span class="icon"> <i>2</i>
+							</span>
+							<h3>Consectetur adipisicing elit</h3>
+							<p>Dignissimos asperiores vitae velit veniam totam fuga
+								molestias accusamus alias autem provident. Odit ab aliquam dolor
+								eius.</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="feature-center animate-box"
+							data-animate-effect="fadeIn">
+							<span class="icon"> <i>3</i>
+							</span>
+							<h3>Dignissimos asperiores vitae</h3>
+							<p>Dignissimos asperiores vitae velit veniam totam fuga
+								molestias accusamus alias autem provident. Odit ab aliquam dolor
+								eius.</p>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+
+
+		<div class="gtco-cover gtco-cover-sm"
+			style="background-image: url(images/img_bg_1.jpg)"
+			data-stellar-background-ratio="0.5">
+			<div class="overlay"></div>
+			<div class="gtco-container text-center">
+				<div class="display-t">
+					<div class="display-tc">
+						<h1>We have high quality services that you will surely love!</h1>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<div id="gtco-counter" class="gtco-section">
+			<div class="gtco-container">
+
+				<div class="row">
+					<div
+						class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
+						<h2>Our Success</h2>
+						<p>Dignissimos asperiores vitae velit veniam totam fuga
+							molestias accusamus alias autem provident. Odit ab aliquam dolor
+							eius.</p>
+					</div>
+				</div>
+
+				<div class="row">
+
+					<div class="col-md-3 col-sm-6 animate-box"
+						data-animate-effect="fadeInUp">
+						<div class="feature-center">
+							<span class="counter js-counter" data-from="0" data-to="196"
+								data-speed="5000" data-refresh-interval="50">1</span> <span
+								class="counter-label">Destination</span>
+
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 animate-box"
+						data-animate-effect="fadeInUp">
+						<div class="feature-center">
+							<span class="counter js-counter" data-from="0" data-to="97"
+								data-speed="5000" data-refresh-interval="50">1</span> <span
+								class="counter-label">Hotels</span>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 animate-box"
+						data-animate-effect="fadeInUp">
+						<div class="feature-center">
+							<span class="counter js-counter" data-from="0" data-to="12402"
+								data-speed="5000" data-refresh-interval="50">1</span> <span
+								class="counter-label">Travelers</span>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 animate-box"
+						data-animate-effect="fadeInUp">
+						<div class="feature-center">
+							<span class="counter js-counter" data-from="0" data-to="12202"
+								data-speed="5000" data-refresh-interval="50">1</span> <span
+								class="counter-label">Happy Customer</span>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+
+		<div id="gtco-subscribe">
+			<div class="gtco-container">
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+						<h2>Subscribe</h2>
+						<p>Be the first to know about the new templates.</p>
+					</div>
+				</div>
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2">
+						<form class="form-inline">
+							<div class="col-md-6 col-sm-6">
+								<div class="form-group">
+									<label for="email" class="sr-only">Email</label> <input
+										type="email" class="form-control" id="email"
+										placeholder="Your Email">
+								</div>
+							</div>
+							<div class="col-md-6 col-sm-6">
+								<button type="submit" class="btn btn-default btn-block">Subscribe</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer id="gtco-footer" role="contentinfo">
+			<div class="gtco-container">
+				<div class="row row-p	b-md">
+
+					<div class="col-md-4">
+						<div class="gtco-widget">
+							<h3>About Us</h3>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								Tempore eos molestias quod sint ipsum possimus temporibus
+								officia iste perspiciatis consectetur in fugiat repudiandae cum.
+								Totam cupiditate nostrum ut neque ab?</p>
+						</div>
+					</div>
+
+					<div class="col-md-2 col-md-push-1">
+						<div class="gtco-widget">
+							<h3>Destination</h3>
+							<ul class="gtco-footer-links">
+								<li><a href="#">Europe</a></li>
+								<li><a href="#">Australia</a></li>
+								<li><a href="#">Asia</a></li>
+								<li><a href="#">Canada</a></li>
+								<li><a href="#">Dubai</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-md-2 col-md-push-1">
+						<div class="gtco-widget">
+							<h3>Hotels</h3>
+							<ul class="gtco-footer-links">
+								<li><a href="#">Luxe Hotel</a></li>
+								<li><a href="#">Italy 5 Star hotel</a></li>
+								<li><a href="#">Dubai Hotel</a></li>
+								<li><a href="#">Deluxe Hotel</a></li>
+								<li><a href="#">BoraBora Hotel</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-md-push-1">
+						<div class="gtco-widget">
+							<h3>Get In Touch</h3>
+							<ul class="gtco-quick-contact">
+								<li><a href="#"><i class="icon-phone"></i> +1 234 567
+										890</a></li>
+								<li><a href="#"><i class="icon-mail2"></i>
+										info@freehtml5.co</a></li>
+								<li><a href="#"><i class="icon-chat"></i> Live Chat</a></li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="row copyright">
+					<div class="col-md-12">
+						<p class="pull-left">
+							<small class="block">&copy; 2016 Free HTML5. All Rights
+								Reserved.</small> <small class="block">Designed by <a
+								href="https://freehtml5.co/" target="_blank">FreeHTML5.co</a>
+								Demo Images: <a href="http://unsplash.com/" target="_blank">Unsplash</a></small>
+						</p>
+						<p class="pull-right">
+						<ul class="gtco-social-icons pull-right">
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-linkedin"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+						</ul>
+						</p>
+					</div>
+				</div>
+
+			</div>
+		</footer>
+		<!-- </div> -->
+
 	</div>
-	<button onclick="myfunction()"></button>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Carousel -->
+	<script src="js/owl.carousel.min.js"></script>
+	<!-- countTo -->
+	<script src="js/jquery.countTo.js"></script>
+
+	<!-- Stellar Parallax -->
+	<script src="js/jquery.stellar.min.js"></script>
+
+	<!-- Magnific Popup -->
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/magnific-popup-options.js"></script>
+
+	<!-- Datepicker -->
+	<script src="js/bootstrap-datepicker.min.js"></script>
+
+
+	<!-- Main -->
+	<script src="js/main.js"></script>
+
 </body>
-
-<style>
-.section {
-	position: relative;
-	height: 100vh;
-}
-
-.section .section-center {
-	position: absolute;
-	top: 50%;
-	left: 0;
-	right: 0;
-	-webkit-transform: translateY(-50%);
-	transform: translateY(-50%);
-}
-
-#booking {
-	font-family: 'Montserrat', sans-serif;
-	background-image:
-		url('https://tailieufree.net/wp-content/uploads/2018/04/hinh-nen-vinh-ha-long-quang-ninh-dep-5.jpg');
-	background-size: cover;
-	background-position: center;
-}
-
-#booking::before {
-	content: '';
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	top: 0;
-	background: rgba(255, 255, 255, 0.6);
-}
-
-.booking-form {
-	background-color: #fff;
-	padding: 50px 20px;
-	-webkit-box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
-	box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
-	border-radius: 4px;
-}
-
-.booking-form .form-group {
-	position: relative;
-	margin-bottom: 30px;
-}
-
-.booking-form .form-control {
-	background-color: #ebecee;
-	border-radius: 4px;
-	border: none;
-	height: 40px;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	color: #3e485c;
-	font-size: 14px;
-}
-
-.booking-form .form-control::-webkit-input-placeholder {
-	color: rgba(62, 72, 92, 0.3);
-}
-
-.booking-form .form-control:-ms-input-placeholder {
-	color: rgba(62, 72, 92, 0.3);
-}
-
-.booking-form .form-control::placeholder {
-	color: rgba(62, 72, 92, 0.3);
-}
-
-.booking-form input[type="date"].form-control:invalid {
-	color: rgba(62, 72, 92, 0.3);
-}
-
-.booking-form select.form-control {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-}
-
-.booking-form select.form-control+.select-arrow {
-	position: absolute;
-	right: 0px;
-	bottom: 4px;
-	width: 32px;
-	line-height: 32px;
-	height: 32px;
-	text-align: center;
-	pointer-events: none;
-	color: rgba(62, 72, 92, 0.3);
-	font-size: 14px;
-}
-
-.booking-form select.form-control+.select-arrow:after {
-	content: '\279C';
-	display: block;
-	-webkit-transform: rotate(90deg);
-	transform: rotate(90deg);
-}
-
-.booking-form .form-label {
-	display: inline-block;
-	color: #3e485c;
-	font-weight: 700;
-	margin-bottom: 6px;
-	margin-left: 7px;
-}
-
-.booking-form .submit-btn {
-	display: inline-block;
-	color: #fff;
-	background-color: #1e62d8;
-	font-weight: 700;
-	padding: 14px 30px;
-	border-radius: 4px;
-	border: none;
-	-webkit-transition: 0.2s all;
-	transition: 0.2s all;
-}
-
-.booking-form .submit-btn:hover, .booking-form .submit-btn:focus {
-	opacity: 0.9;
-}
-
-.booking-cta {
-	margin-top: 80px;
-	margin-bottom: 30px;
-}
-
-.booking-cta h1 {
-	font-size: 52px;
-	text-transform: uppercase;
-	color: #fff;
-	font-weight: 700;
-}
-
-.booking-cta p {
-	font-size: 16px;
-	color: rgba(255, 255, 255, 0.8);
-}
-</style>
 </html>
+

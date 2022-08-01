@@ -29,13 +29,13 @@ public class FindTicket extends HttpServlet {
         String ticket_ID= request.getParameter("ticketID");
         String phone = request.getParameter("phone");
         DAO dao = new DAO();
-        TicketManagement ticketDetal = dao.findTicket(ticket_ID, phone);
+        TicketManagement ticketDetal = dao.findTicketByPhoneAndIdTicket(ticket_ID, phone);
         if (ticketDetal == null) {
         	request.setAttribute("mess","Sai mã vẽ hoặc số điện thoại");
         	request.getRequestDispatcher("FindTicket.jsp").forward(request, response);
         }else {
         	request.setAttribute("ticketDetal", ticketDetal);
-        	request.getRequestDispatcher("TicketDetal.jsp").forward(request, response);
+        	request.getRequestDispatcher("TicketDetail.jsp").forward(request, response);
         }
         
     }

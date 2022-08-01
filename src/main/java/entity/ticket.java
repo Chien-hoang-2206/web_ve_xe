@@ -5,21 +5,38 @@ public class ticket {
 	int userID;
 	int carID;
 	int paymentID;
+	int routeID;
+	public int getRouteID() {
+		return routeID;
+	}
+	public void setRouteID(int routeID) {
+		this.routeID = routeID;
+	}
 	int timeID;
-	boolean ticketStatus;
+	boolean ticketStatus = false;
 	public ticket() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public ticket(int ticketID, int userID, int carID, int paymentID, int timeID, int slotID, boolean ticketStatus) {
+
+	public ticket(int userID, int carID, int paymentID, int routeID, int timeID) {
 		super();
-		this.ticketID = ticketID;
 		this.userID = userID;
 		this.carID = carID;
 		this.paymentID = paymentID;
+		this.routeID = routeID;
 		this.timeID = timeID;
-		this.ticketStatus = ticketStatus;
 	}
+//	public ticket(int ticketID, int userID, int carID, int paymentID, int routeID, int timeID, boolean ticketStatus) {
+//		super();
+//		this.ticketID = ticketID;
+//		this.userID = userID;
+//		this.carID = carID;
+//		this.paymentID = paymentID;
+//		this.routeID = routeID;
+//		this.timeID = timeID;
+//		this.ticketStatus = ticketStatus;
+//	}
 	public int getTicketID() {
 		return ticketID;
 	}
@@ -55,5 +72,13 @@ public class ticket {
 	}
 	public void setTicketStatus(boolean ticketStatus) {
 		this.ticketStatus = ticketStatus;
-	}	
+	}
+	@Override
+	public String toString() {
+		return "ticket [userID=" + userID + ", carID=" + carID + ", paymentID=" + paymentID + ", routeID=" + routeID
+				+ ", timeID=" + timeID + ", ticketStatus=" + ticketStatus + "]";
+	}
+	
+	
+	
 }
